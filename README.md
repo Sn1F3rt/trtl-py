@@ -1,8 +1,10 @@
 ---
-description: trtl-py is a Python Wrapper which integrates with TurtleCoind and WalletAPI.
+description: >-
+  trtl-py is a Python Wrapper for the JSON-RPC API of TurtleCoin, which
+  integrates with TurtleCoind and WalletAPI.
 ---
 
-# trtl-py
+# Home
 
 ## Installation
 
