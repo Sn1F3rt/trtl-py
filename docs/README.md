@@ -12,13 +12,13 @@ description: >-
 pip3 install trtl
 ```
 
-## Source Code 
+## Source Code
 
 The source code for this project is available at [https://github.com/sohamb03/trtl-py](https://github.com/sohamb03/trtl-py)
 
-## Requirements 
+## Requirements
 
-* Python version &gt;= 3.6 
+* Python &gt;= 3.6 
 * TurtleCoin version 0.22.0
 
 ## License
