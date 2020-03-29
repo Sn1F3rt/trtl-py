@@ -1,14 +1,12 @@
 # Home
 
+*trtl-py is a Python Wrapper for the JSON-RPC API of TurtleCoin, which integrates with TurtleCoind and WalletAPI.*
+  
 ## Installation
 
-```text
+```sh
 pip3 install trtl
 ```
-
-## Source Code
-
-The source code for this project is available at [https://github.com/sohamb03/trtl-py](https://github.com/sohamb03/trtl-py)
 
 ## Requirements
 
