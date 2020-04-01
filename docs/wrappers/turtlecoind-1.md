@@ -2,19 +2,19 @@
 
 ## Running TurtleCoind
 
-Becoming a super hero is a fairly straight forward process:
+Start _TurtleCoind_ with the `--enable-blockexplorer` argument:
 
 ```
 ./TurtleCoind --enable-blockexplorer
 ```
 
-After starting it make sure the blockchain is synchronized. This might take a while. The console log will show a message when it’s done:
+After starting it make sure the block-chain is synchronized. This might take a while. The console log will show a message when it’s done:
 
 ```bash
 Successfully synchronized with the TurtleCoin Network
 ```
 
-The python integration can now be used.
+The python wrapper can now be used.
 
 ## Usage
 
@@ -22,7 +22,7 @@ The python integration can now be used.
 class TurtleCoind(host = '127.0.0.1', port = 11898, ssl = False)
 ```
 
-Integrates with the JSON RPC interface of TurtleCoind.
+Integrates with the JSON-RPC interface of TurtleCoind.
 
 1. **`get_block_count()`**
 
