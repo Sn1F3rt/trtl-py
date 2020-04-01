@@ -40,12 +40,12 @@ class TurtleCoind:
 
         return self._post_request('getblockcount')
 
-    def get_block_hash(self, block_hash):
+    def get_block_hash(self, height):
         """
         Returns block hash for a given height off by one
         """
 
-        params = [block_hash]
+        params = [height]
         return self._post_request('on_getblockhash', **params)
 
     def get_block_template(self, reserve_size, wallet_address):
