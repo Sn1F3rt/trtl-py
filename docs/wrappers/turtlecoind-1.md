@@ -4,13 +4,13 @@
 
 Start _TurtleCoind_ with the `--enable-blockexplorer` argument:
 
-```
+```bash
 ./TurtleCoind --enable-blockexplorer
 ```
 
 After starting it make sure the block-chain is synchronized. This might take a while. The console log will show a message when it’s done:
 
-```bash
+```
 Successfully synchronized with the TurtleCoin Network
 ```
 
