@@ -42,9 +42,9 @@ Integrates with the JSON-RPC interface of TurtleCoind.
 }
 ```
 
-2. **`get_block_hash(height)`**
+     2. **`get_block_hash(height)`**
 
-         Returns block hash for a given height off by one.
+           Returns block hash for a given height off by one.
 
 | Argument | Mandatory | Description | Data Type |
 | :--- | :--- | :--- | :--- |
@@ -59,16 +59,16 @@ Integrates with the JSON-RPC interface of TurtleCoind.
 }
 ```
 
-3. **`get_block_template(reserve_size, wallet_address)`**
+      __3. **`get_block_template(reserve_size, wallet_address)`**
 
-          Returns blocktemplate with an empty "hole" for nonce.
+            Returns blocktemplate with an empty "hole" for nonce.
 
 | Argument | Mandatory | Description | Data Type |
 | :--- | :--- | :--- | :--- |
 | reserve\_size | Yes | Size of the reserve to be specified. | int |
 | wallet\_address | Yes | Valid TurtleCoin wallet address | string |
 
-          `Return type` : _dict_
+            `Return type` : _dict_
 
 ```python
 {
@@ -83,15 +83,14 @@ Integrates with the JSON-RPC interface of TurtleCoind.
 }
 ```
 
-4. **`submit_block(block_blob)`** 
-
-          Submits mined block.
+      4. **`submit_block(block_blob)`** 
+            Submits mined block.
 
 | Argument | Mandatory | Description | Data Type |
 | :--- | :--- | :--- | :--- |
 | block\_blob | Yes | Block blob of the mined block | string  |
 
-          _`Return type`_ : _dict_
+            _`Return type`_ : _dict_
 
 ```python
 {
@@ -102,13 +101,13 @@ Integrates with the JSON-RPC interface of TurtleCoind.
 } 
 ```
 
-5. **`get_last_block_header()`** 
+      5. **`get_last_block_header()`** 
 
-          Returns the block header of the last block.
+            Returns the block header of the last block.
 
             **NO INPUT**
 
-          _`Return type`_ : _dict_
+            _`Return type`_ : _dict_
 
 ```python
 {
