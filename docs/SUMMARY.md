@@ -4,7 +4,7 @@
 
 ## Wrappers
 
-* [TurtleCoind](wrappers/turtlecoind-1.md)
+* [TurtleCoind](wrappers/turtlecoind.md)
 * [Wallet-API](wrappers/wallet-api.md)
 
 ## Examples
