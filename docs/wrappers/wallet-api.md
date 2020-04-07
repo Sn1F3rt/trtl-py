@@ -49,9 +49,9 @@ Integrates with the JSON-PRC interface of Wallet-API.
 | daemonPort | No | `11898` | The daemon port to sync the wallet with | int |
 | scanHeight | No | - | The block height to start scanning from | int |
 
-            `Return Type` : _int_
+            `Return Type` : _None_
 
-**If the operation was successful, `200` is returned else a `ValueError` is raised, with the relevant error message.**
+**If the operation was successful,  no value is returned else a `ValueError` is raised, with the relevant error message.**
 
       3. **`import_wallet_seed(filename, password, seed, daemonHost = '127.0.0.1', daemonPort = '11898', scanHeight  = None)`**
 
@@ -66,7 +66,9 @@ Integrates with the JSON-PRC interface of Wallet-API.
 | daemonPort | No | `11898` | The daemon port to sync the wallet with | int |
 | scanHeight | No | - | The block height to start scanning from | int |
 
-**If the operation was successful, `200` is returned else a `ValueError` is raised, with the relevant error message.**
+            `Return Type` : _None_
+
+**If the operation was successful,  no value is returned else a `ValueError` is raised, with the relevant error message.**
 
       4. **`import_wallet_view(filename, password, privateViewKey, address, daemonHost = 127.0.0.1, daemonPort = 11898, scanHeight = None)`**
 
@@ -82,9 +84,9 @@ Integrates with the JSON-PRC interface of Wallet-API.
 | daemonPort | No | `11898` | The daemon port to sync the wallet with | int |
 | scanHeight | No | - | The block height to start scanning from | int |
 
-           `Return Type` : _int_
+           `Return Type` : _None_
 
-**If the operation was successful, `200` is returned else a `ValueError` is raised, with the relevant error message.**
+**If the operation was successful,  no value is returned else a `ValueError` is raised, with the relevant error message.**
 
       5. **`create_wallet(filename, password, daemonHost = None, daemonPort = None)`**
 
@@ -97,9 +99,9 @@ Integrates with the JSON-PRC interface of Wallet-API.
 | daemonHost | No | `127.0.0.1` | The daemon host to sync the wallet with | str |
 | daemonPort | No | `11898` | The daemon port to sync the wallet with | int |
 
-            `Return Type` : _int_
+            `Return Type` : _None_
 
-**If the operation was successful, `200` is returned else a `ValueError` is raised, with the relevant error message.**
+**If the operation was successful,  no value is returned else a `ValueError` is raised, with the relevant error message.**
 
       6. **`delete_wallet()`**
 
@@ -107,9 +109,9 @@ Integrates with the JSON-PRC interface of Wallet-API.
 
             **NO INPUT**
 
-            `Return Type` : _int_
+            `Return Type` : _None_
 
-**If the operation was successful, `200` is returned else a `ValueError` is raised, with the relevant error message.**
+**If the operation was successful,  no value is returned else a `ValueError` is raised, with the relevant error message.**
 
       7. **`addresses()`**
 
@@ -137,9 +139,9 @@ Integrates with the JSON-PRC interface of Wallet-API.
 | :---: | :---: | :---: | :---: |
 | address | Yes | The address to use for this operation. Should be a valid, 99 character TRTL address. | str |
 
-            `Return Type` : _dict_
+            `Return Type` : _None_
 
-**If the operation was successful, `200` is returned else a `ValueError` is raised, with the relevant error message.**
+**If the operation was successful,  no value is returned else a `ValueError` is raised, with the relevant error message.**
 
       9. **`primary_address()`**
 
@@ -412,4 +414,149 @@ Integrates with the JSON-PRC interface of Wallet-API.
   ]
 }
 ```
+
+      23. **`transactions_height(startHeight, endHeight = None)`**
+
+            Returns transactions for the wallet starting at start height for 1,000 blocks \(or until end height if specified\). Note that start height must be &lt; end height.
+
+| Argument | Mandatory | Default | Description | Data Type |
+| :---: | :---: | :---: | :---: | :---: |
+| startHeight | Yes | - | The starting block height to use for this operation. | int |
+| endHeight | No | 0 | The ending block height to use for this operation. | int |
+
+            `Return Type` : _dict_
+
+```python
+#Expected Output
+
+{
+  "transactions": [
+    {
+      "blockHeight": 800000,
+      "fee": 10,
+      "hash": "8e2dc89659409ea9c34a2e28f7350cefba304159c04cc4926acd12035a8b2379",
+      "isCoinbaseTransaction": false,
+      "paymentID": "7fe73bd90ef05dea0b5c15fc78696619c50dd5f2ba628f2fd16a2e3445b1922f",
+      "timestamp": 1543222082,
+      "unlockTime": 0,
+      "transfers": {
+        "address": "TRTLv3ErzkY2CiAj6DL8isYELmTec8Z9BK56oL1KMhjMRSMyfwYaogKg17hQKC23CHPBcHqrHHGzdRYUk3HGqkMwXbHg3Dy2rH",
+        "amount": 1234
+      }
+    }
+  ]
+}
+```
+
+      24. **`transactions_height_address(address, startHeight, endHeight = None)`**
+
+            Returns transactions for the wallet starting at start height for 1,000 blocks, that belong to the given address \(or until end height if specified\). Note that start height must be &lt; end height. Also note that the transfers list will still contain transfers to other addresses, if present.
+
+| Argument | Mandatory | Default | Description | Data Type |
+| :---: | :---: | :---: | :---: | :---: |
+| address | Yes | - | The address to use for this operation. Should be a valid, 99 character TRTL address. | str |
+| startHeight | Yes | - | The starting block height to use for this operation. | int |
+| endHeight | No | 0 | The ending block height to use for this operation. | int |
+
+            `Return Type` : _dict_
+
+```python
+#Expected Output
+
+{
+  "transactions": [
+    {
+      "blockHeight": 800000,
+      "fee": 10,
+      "hash": "8e2dc89659409ea9c34a2e28f7350cefba304159c04cc4926acd12035a8b2379",
+      "isCoinbaseTransaction": false,
+      "paymentID": "7fe73bd90ef05dea0b5c15fc78696619c50dd5f2ba628f2fd16a2e3445b1922f",
+      "timestamp": 1543222082,
+      "unlockTime": 0,
+      "transfers": {
+        "address": "TRTLv3ErzkY2CiAj6DL8isYELmTec8Z9BK56oL1KMhjMRSMyfwYaogKg17hQKC23CHPBcHqrHHGzdRYUk3HGqkMwXbHg3Dy2rH",
+        "amount": 1234
+      }
+    }
+  ]
+}
+```
+
+      25. **`send_basic(dest_addr, amount, paymentID = None)`**
+
+            Sends a transaction. This method will take funds from all sub-wallets as needed, and will use the primary address as the change address. It also uses a default fee, and default mixin. **If this is not acceptable, please use the send\_advanced method instead.**
+
+| **Argument** | Mandatory | Default | Description | Data Type |
+| :---: | :---: | :---: | :---: | :---: |
+| address | Yes | - | The address to send funds to. | str |
+| amount | Yes | - | The amount of TRTL to send. | int |
+| paymentID | No | - | The payment ID to use. | str |
+
+            `Return Type` : _dict_
+
+```python
+#Expected Output
+
+{
+  "transactionHash": "396e2a782c9ce9993982c6f93e305b05306d0e5794f57157fbac78581443c55f",
+  "fee": 1000,
+  "relayedToNetwork": true
+}
+```
+
+      26. **`prepare_basic(amount, address = None, paymentID = None)`**
+
+            Creates a transaction but does not relay it to the network. This method will take funds from all sub-wallets as needed, and will use the primary address as the change address. It also uses a default fee, and default mixin. **If this is not acceptable, please use the prepare\_advanced method instead**. Allows you to review the created transactions fee before deciding whether to commit to paying that fee. **Prepared transactions can be sent using send\_prepared method, or cancelled with cancel\_prepared method**. 
+
+| Argument | Mandatory | Default | Description | Data Type |
+| :---: | :---: | :---: | :---: | :---: |
+| amount | Yes | - | The amount of TRTL to send. | int |
+| address | No | - | The address to send funds to. | str |
+| paymentID | No | - | The payment ID to use. | str |
+
+            `Return Type` : _dict_ **\(Also note that the fee returned is in atomic units. Divide it by 100 to get the amount in TRTL\)**
+
+```python
+#Expected Output
+
+{
+  "transactionHash": "396e2a782c9ce9993982c6f93e305b05306d0e5794f57157fbac78581443c55f",
+  "fee": 1000,
+  "relayedToNetwork": false
+}
+```
+
+      27. 
+
+
+
+      28. 
+
+
+
+      29. **`send_prepared(hash)`**
+
+            Sends a previously prepared transaction.
+
+| Argument | Mandatory | Default | Description | Data Type |
+| :---: | :---: | :---: | :---: | :---: |
+| hash  | Yes | - |  The transaction hash returned by a previous **prepare\_basic** or **prepare\_advanced** call | str |
+
+            `Return Type` : _dict_
+
+```python
+{
+  "transactionHash": "1982d8903c5e2b0914e6586e5b715758823e4903c2bacda7aa519ff6feb1476e"
+}
+```
+
+      30. **`cancel_prepared(hash)`**
+
+            Cancels a previously prepared transaction. While it is not mandatory to call this method for a prepared transaction you do not wish to send, it is highly advised, as it will free up RAM.
+
+| Argument | Mandatory | Default | Description | Data Type |
+| :---: | :---: | :---: | :---: | :---: |
+| hash | Yes | - |  The prepared transaction hash to cancel. This hash is returned from the `prepare_basic` or `prepare_advanced` methods. | str |
+
+      `Return Type` : No value returned.
 
