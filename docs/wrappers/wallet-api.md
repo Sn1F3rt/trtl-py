@@ -15,12 +15,12 @@ You can now use the Python Wrapper for Wallet-API.
 ## Usage
 
 ```python
-class WalletAPI(key, RPC_Host = '127.0.0.1', RPC_Port = 8070, ssl = False)
+class WalletAPI(key, rpc_host = '127.0.0.1', rpc_port = 8070, ssl = False)
 ```
 
 Integrates with the JSON-PRC interface of Wallet-API.
 
-      1. **`open_wallet(filename, password, daemonHost = '127.0.0.1', daemonPort = 11898)`** 
+      1. **`open_wallet(filename, password, daemon_host = '127.0.0.1', daemon_port = 11898)`** 
 
             Opens an already existing wallet.
 
@@ -28,14 +28,14 @@ Integrates with the JSON-PRC interface of Wallet-API.
 | :--- | :--- | :---: | :--- | :--- |
 | filename | Yes | - | The filename to store the wallet from. | str |
 | password | Yes | - | The password used to open the wallet | str |
-| daemonHost | No  | `'127.0.0.1'` | The daemon host to sync the wallet with | str |
-| daemonPort | No | `11898` | The daemon port to sync the wallet with | int |
+| daemon\_host | No  | `'127.0.0.1'` | The daemon host to sync the wallet with | str |
+| daemon\_port | No | `11898` | The daemon port to sync the wallet with | int |
 
             `Return Type`  : _int_
 
 **If the operation was successful, `200` is returned else a `ValueError` is raised, with the relevant error message.**
 
-      2. **`import_wallet_key(filename, password, privateViewKey, privateSpendKey, daemonHost = None, daemonPort = None, scanHeight = None)`**
+      2. **`import_wallet_key(filename, password, private_view_key, private_spend_key, daemon_host = None, daemon_port = None, scan_height = None)`**
 
            Imports a wallet with a private view and spend key.
 
@@ -43,17 +43,17 @@ Integrates with the JSON-PRC interface of Wallet-API.
 | :---: | :---: | :---: | :---: | :---: |
 | filename | Yes | - | The filename to load the wallet from. | str |
 | password | Yes | - | The password used to open the wallet | str |
-| privateViewKey | Yes | - | 64 char hex private view key | str |
-| privateSpendKey | Yes | - | 64 char hex private spend key | str |
-| daemonHost | No | `'127.0.0.1'` | The daemon host to sync the wallet with | str |
-| daemonPort | No | `11898` | The daemon port to sync the wallet with | int |
-| scanHeight | No | - | The block height to start scanning from | int |
+| private\_view\_key | Yes | - | 64 char hex private view key | str |
+| private\_spend\_key | Yes | - | 64 char hex private spend key | str |
+| daemon\_host | No | `'127.0.0.1'` | The daemon host to sync the wallet with | str |
+| daemon\_port | No | `11898` | The daemon port to sync the wallet with | int |
+| scan\_height | No | - | The block height to start scanning from | int |
 
             `Return Type` : _None_
 
 **If the operation was successful,  no value is returned else a `ValueError` is raised, with the relevant error message.**
 
-      3. **`import_wallet_seed(filename, password, seed, daemonHost = '127.0.0.1', daemonPort = '11898', scanHeight  = None)`**
+      3. **`import_wallet_seed(filename, password, seed, daemon_host = '127.0.0.1', daemon_port = 11898, scan_height  = None)`**
 
             Imports a wallet using a mnemonic seed. 
 
@@ -62,15 +62,15 @@ Integrates with the JSON-PRC interface of Wallet-API.
 | filename | Yes | - | The filename to load the wallet from. | str |
 | password | Yes | - | The password used to open the wallet | str |
 | seed | Yes | - | The 25 words mnemonic seed | str |
-| daemonHost | No | `'127.0.0.1'` | The daemon host to sync the wallet with | str |
-| daemonPort | No | `11898` | The daemon port to sync the wallet with | int |
-| scanHeight | No | - | The block height to start scanning from | int |
+| daemon\_host | No | `'127.0.0.1'` | The daemon host to sync the wallet with | str |
+| daemon\_port | No | `11898` | The daemon port to sync the wallet with | int |
+| scan\_height | No | - | The block height to start scanning from | int |
 
             `Return Type` : _None_
 
 **If the operation was successful,  no value is returned else a `ValueError` is raised, with the relevant error message.**
 
-      4. **`import_wallet_view(filename, password, privateViewKey, address, daemonHost = 127.0.0.1, daemonPort = 11898, scanHeight = None)`**
+      4. **`import_wallet_view(filename, password, private_view_key, address, daemon_host = 127.0.0.1, daemon_port = 11898, scan_height = None)`**
 
             Imports a view only wallet with a private view key and public address.
 
@@ -78,17 +78,17 @@ Integrates with the JSON-PRC interface of Wallet-API.
 | :---: | :---: | :---: | :---: | :---: |
 | filename | Yes | - | The filename to load the wallet from. | str |
 | password | Yes | - | The password used to open the wallet | str |
-| privateViewKey | Yes | - | 64 char hex private view key | str |
+| private\_view\_key | Yes | - | 64 char hex private view key | str |
 | address | Yes | - | 99 char public TRTL address | str |
-| daemonHost | No | `'127.0.0.1'` | The daemon host to sync the wallet with | str |
-| daemonPort | No | `11898` | The daemon port to sync the wallet with | int |
-| scanHeight | No | - | The block height to start scanning from | int |
+| daemon\_host | No | `'127.0.0.1'` | The daemon host to sync the wallet with | str |
+| daemon\_port | No | `11898` | The daemon port to sync the wallet with | int |
+| scan\_height | No | - | The block height to start scanning from | int |
 
            `Return Type` : _None_
 
 **If the operation was successful,  no value is returned else a `ValueError` is raised, with the relevant error message.**
 
-      5. **`create_wallet(filename, password, daemonHost = None, daemonPort = None)`**
+      5. **`create_wallet(filename, password, daemon_host = None, daemon_port = None)`**
 
              Creates a new wallet.
 
@@ -96,8 +96,8 @@ Integrates with the JSON-PRC interface of Wallet-API.
 | :---: | :---: | :---: | :---: | :---: |
 | filename | Yes | - | The filename to load the wallet from. | str |
 | password | Yes | - | The password used to open the wallet | str |
-| daemonHost | No | `127.0.0.1` | The daemon host to sync the wallet with | str |
-| daemonPort | No | `11898` | The daemon port to sync the wallet with | int |
+| daemon\_host | No | `127.0.0.1` | The daemon host to sync the wallet with | str |
+| daemon\_port | No | `11898` | The daemon port to sync the wallet with | int |
 
             `Return Type` : _None_
 
@@ -133,7 +133,7 @@ Integrates with the JSON-PRC interface of Wallet-API.
 
       8. **`delete_address(address)`**
 
-            Deletes the given subwallet from the container.
+            Deletes the given sub-wallet from the container.
 
 | Argument | Mandatory | Description | Data Type |
 | :---: | :---: | :---: | :---: |
@@ -157,7 +157,7 @@ Integrates with the JSON-PRC interface of Wallet-API.
 }
 ```
 
-      10. **`create_address`**
+      10. **`create_address()`**
 
             Creates a new, random address in the wallet container.
 
@@ -175,7 +175,7 @@ Integrates with the JSON-PRC interface of Wallet-API.
 
       11. **`import_address(private_spend_key, scan_height = None)`**
 
-            Imports a subwallet with the given private spend key. It is HIGHLY recommended you provide a scan height with this operation - wallet syncing will have to begin again from the scan height given \(defaults to zero\) if the scan height is less than the height of the current wallet sync status.
+            Imports a sub-wallet with the given private spend key. It is HIGHLY recommended you provide a scan height with this operation - wallet syncing will have to begin again from the scan height given \(defaults to zero\) if the scan height is less than the height of the current wallet sync status.
 
 | Argument | Mandatory | Default | Description | Data Type |
 | :---: | :---: | :---: | :---: | :---: |
@@ -192,7 +192,7 @@ Integrates with the JSON-PRC interface of Wallet-API.
 
       12. **`import_address_view(public_spend_key, scan_height = None)`**
 
-            Imports a view only subwallet with the given publicSpendKey. It is HIGHLY recommended you provide a scan height with this operation - wallet syncing will have to begin again from the scan height given \(defaults to zero\) if the scan height is less than the height of the current wallet sync status.
+            Imports a view only sub-wallet with the given `public_spend_key`. It is HIGHLY recommended you provide a scan height with this operation - wallet syncing will have to begin again from the `scan_height` given \(defaults to zero\) if the scan height is less than the height of the current wallet sync status.
 
 | Argument | Mandatory | Default | Description | Data Type |
 | :---: | :---: | :---: | :---: | :---: |
@@ -207,14 +207,14 @@ Integrates with the JSON-PRC interface of Wallet-API.
 }
 ```
 
-      13. **`integrated_address(address, paymentID)`**
+      13. **`integrated_address(address, payment_id)`**
 
             Creates an integrated address from an address and payment ID.
 
 | Argument | Mandatory | Default | Description | Data Type |
 | :---: | :---: | :---: | :---: | :---: |
 | address | Yes | - | The address to use for this operation. Should be a valid, 99 character TRTL address. | str |
-| paymentID | Yes | - | The payment ID to use for this operation. Should be a 64 char hex string. | str |
+| payment\_id | Yes | - | The payment ID to use for this operation. Should be a 64 char hex string. | str |
 
             `Return Type` : _dict_
 
@@ -241,14 +241,14 @@ Integrates with the JSON-PRC interface of Wallet-API.
 }
 ```
 
-      15. **`set_node(daemonHost, daemonPort)`**
+      15. **`set_node(daemon_host, daemon_port)`**
 
             Sets the node address and port.
 
 | Argument | Mandatory | Default | Description | Data Type |
-| :--- | :--- | :--- | :--- | :--- |
-| daemonHost | Yes | - | The daemon host to sync the wallet with | str |
-| daemonPort | Yes | - | The daemon port to sync the wallet with | int |
+| :---: | :---: | :---: | :---: | :---: |
+| daemon\_host | Yes | - | The daemon host to sync the wallet with | str |
+| daemon\_port | Yes | - | The daemon port to sync the wallet with | int |
 
             **If the operation was successful, no value is returned. Otherwise, a `ValueError` is raised with the relevant error message.**
 
@@ -329,13 +329,13 @@ Integrates with the JSON-PRC interface of Wallet-API.
 }
 ```
 
-      20. **`transaction_details(hash)`**
+      20. **`transaction_details(txn_hash)`**
 
             Returns details on the given transaction, if found.
 
 | Argument | Mandatory | Default | Description | Data Type |
 | :---: | :---: | :---: | :---: | :---: |
-| hash | Yes | - | The transaction hash to use for this operation. Should be a 64 char hex string. | str |
+| txn\_hash | Yes | - | The transaction hash to use for this operation. Should be a 64 char hex string. | str |
 
             `Return Type` : _dict_
 
@@ -415,14 +415,14 @@ Integrates with the JSON-PRC interface of Wallet-API.
 }
 ```
 
-      23. **`transactions_height(startHeight, endHeight = None)`**
+      23. **`transactions_height(start_height, end_height = None)`**
 
             Returns transactions for the wallet starting at start height for 1,000 blocks \(or until end height if specified\). Note that start height must be &lt; end height.
 
 | Argument | Mandatory | Default | Description | Data Type |
 | :---: | :---: | :---: | :---: | :---: |
-| startHeight | Yes | - | The starting block height to use for this operation. | int |
-| endHeight | No | 0 | The ending block height to use for this operation. | int |
+| start\_height | Yes | - | The starting block height to use for this operation. | int |
+| end\_height | No | 0 | The ending block height to use for this operation. | int |
 
             `Return Type` : _dict_
 
@@ -448,15 +448,15 @@ Integrates with the JSON-PRC interface of Wallet-API.
 }
 ```
 
-      24. **`transactions_height_address(address, startHeight, endHeight = None)`**
+      24. **`transactions_height_address(address, start_height, end_height = None)`**
 
             Returns transactions for the wallet starting at start height for 1,000 blocks, that belong to the given address \(or until end height if specified\). Note that start height must be &lt; end height. Also note that the transfers list will still contain transfers to other addresses, if present.
 
 | Argument | Mandatory | Default | Description | Data Type |
 | :---: | :---: | :---: | :---: | :---: |
 | address | Yes | - | The address to use for this operation. Should be a valid, 99 character TRTL address. | str |
-| startHeight | Yes | - | The starting block height to use for this operation. | int |
-| endHeight | No | 0 | The ending block height to use for this operation. | int |
+| start\_height | Yes | - | The starting block height to use for this operation. | int |
+| end\_height | No | 0 | The ending block height to use for this operation. | int |
 
             `Return Type` : _dict_
 
@@ -482,7 +482,7 @@ Integrates with the JSON-PRC interface of Wallet-API.
 }
 ```
 
-      25. **`send_basic(dest_addr, amount, paymentID = None)`**
+      25. **`send_basic(address, amount, payment_id = None)`**
 
             Sends a transaction. This method will take funds from all sub-wallets as needed, and will use the primary address as the change address. It also uses a default fee, and default mixin. **If this is not acceptable, please use the send\_advanced method instead.**
 
@@ -490,7 +490,7 @@ Integrates with the JSON-PRC interface of Wallet-API.
 | :---: | :---: | :---: | :---: | :---: |
 | address | Yes | - | The address to send funds to. | str |
 | amount | Yes | - | The amount of TRTL to send. | int |
-| paymentID | No | - | The payment ID to use. | str |
+| payment\_id | No | - | The payment ID to use. | str |
 
             `Return Type` : _dict_
 
@@ -504,7 +504,7 @@ Integrates with the JSON-PRC interface of Wallet-API.
 }
 ```
 
-      26. **`prepare_basic(amount, address = None, paymentID = None)`**
+      26. **`prepare_basic(amount, address = None, payment_is = None)`**
 
             Creates a transaction but does not relay it to the network. This method will take funds from all sub-wallets as needed, and will use the primary address as the change address. It also uses a default fee, and default mixin. **If this is not acceptable, please use the prepare\_advanced method instead**. Allows you to review the created transactions fee before deciding whether to commit to paying that fee. **Prepared transactions can be sent using send\_prepared method, or cancelled with cancel\_prepared method**. 
 
@@ -512,7 +512,7 @@ Integrates with the JSON-PRC interface of Wallet-API.
 | :---: | :---: | :---: | :---: | :---: |
 | amount | Yes | - | The amount of TRTL to send. | int |
 | address | No | - | The address to send funds to. | str |
-| paymentID | No | - | The payment ID to use. | str |
+| payment\_id | No | No payment ID. | The payment ID to use. | str |
 
             `Return Type` : _dict_ **\(Also note that the fee returned is in atomic units. Divide it by 100 to get the amount in TRTL\)**
 
@@ -526,21 +526,57 @@ Integrates with the JSON-PRC interface of Wallet-API.
 }
 ```
 
-      27. 
+      27. **`send_advanced(destination, mixin=None, fee=None, fee_per_byte=None,payment_id=None, source_addresses=None, change_address=None, unlock_time=None, extra=None)`**
 
+            Sends a transaction. Custom configurations for sending transactions are available here.
 
+| Argument | Mandatory | Default | Description | Data Type |
+| :---: | :---: | :---: | :---: | :---: |
+| destination | Yes | - | List of dictionaries with address and amount \(in atomic units\) as keys.  | list |
+| mixin | No | The default mixin defined by the core software for the current height. | The mixin level to use. | int |
+| fee | No | 0 | The fee in TRTL to use with this transaction. | int |
+| fee\_per\_byte | No | 0 | The amount in TRTL to pay for each byte of the resulting transaction size. | int |
+| payment\_id | No | - | The payment ID to use. | str |
+| source\_addresses | No | Every address in the wallet container. | List of the addresses to draw funds for the transaction from \(must be  addresses in this container\), | list |
+| change\_address | No | Primary address. | The address in this wallet to return any ‘change’ to if we have to spend more than the requested amount. | str |
+| unlock\_time | No | 0 | When to unlock the transaction. A user cannot spend locked funds until the unlock time has been reached. Can use either a block height, or a unix timestamp. | int |
+| extra | No | - |  Hex representation of any extra data to be included in the `tx_extra` field of the transaction. | str |
 
-      28. 
+            `Return Type` : _dict_
 
+```python
+{
+  "transactionHash": "396e2a782c9ce9993982c6f93e305b05306d0e5794f57157fbac78581443c55f",
+  "fee": 1000,
+  "relayedToNetwork": true
+}
+```
 
+      28. **`prepare_advanced(destination, mixin=None, fee=None, fee_per_byte=None, payment_id=None, source_addresses=None, change_address=None, unlock_time=None, extra=None)`**
 
-      29. **`send_prepared(hash)`**
+            Creates a transaction but does not relay it to the network. Custom configurations for sending transactions are available here.
+
+|  |  |  |  |  |
+| :--- | :--- | :--- | :--- | :--- |
+|  |  |  |  |  |
+
+            `Return Type` : _dict_
+
+```python
+{
+  "transactionHash": "396e2a782c9ce9993982c6f93e305b05306d0e5794f57157fbac78581443c55f",
+  "fee": 1000,
+  "relayedToNetwork": false
+}
+```
+
+      29. **`send_prepared(txn_hash)`**
 
             Sends a previously prepared transaction.
 
 | Argument | Mandatory | Default | Description | Data Type |
 | :---: | :---: | :---: | :---: | :---: |
-| hash  | Yes | - |  The transaction hash returned by a previous **prepare\_basic** or **prepare\_advanced** call | str |
+| txn\_hash  | Yes | - |  The transaction hash returned by a previous **prepare\_basic** or **prepare\_advanced** call | str |
 
             `Return Type` : _dict_
 
@@ -550,13 +586,43 @@ Integrates with the JSON-PRC interface of Wallet-API.
 }
 ```
 
-      30. **`cancel_prepared(hash)`**
+      30. **`cancel_prepared(txn_hash)`**
 
             Cancels a previously prepared transaction. While it is not mandatory to call this method for a prepared transaction you do not wish to send, it is highly advised, as it will free up RAM.
 
 | Argument | Mandatory | Default | Description | Data Type |
 | :---: | :---: | :---: | :---: | :---: |
-| hash | Yes | - |  The prepared transaction hash to cancel. This hash is returned from the `prepare_basic` or `prepare_advanced` methods. | str |
+| txn\_hash | Yes | - |  The prepared transaction hash to cancel. This hash is returned from the `prepare_basic` or `prepare_advanced` methods. | str |
 
       `Return Type` : No value returned.
+
+      31. **`send_fusion_basic()`**
+
+            Fusion transactions are zero fee, and seek to combine small inputs into larger ones, to allow for larger transactions. Many fusions may be required to fully optimize a wallet.  
+
+            **NO INPUT**
+
+            `Return Type`: _dict_
+
+```python
+{
+  "transactionHash": "396e2a782c9ce9993982c6f93e305b05306d0e5794f57157fbac78581443c55f"
+}
+```
+
+      32. **`send_fusion_advanced(mixin=None, destination=None, source_addresses=None, optimize_target=None)`**
+
+            Fusion transactions are zero fee, and seek to combine small inputs into larger ones, to allow for larger transactions. Many fusions may be required to fully optimize a wallet.
+
+|  |  |  |  |  |
+| :--- | :--- | :--- | :--- | :--- |
+|  |  |  |  |  |
+
+            `Return Type` : _dict_
+
+```python
+{
+  "transactionHash": "396e2a782c9ce9993982c6f93e305b05306d0e5794f57157fbac78581443c55f"
+}
+```
 
