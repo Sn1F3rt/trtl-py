@@ -556,9 +556,16 @@ Integrates with the JSON-PRC interface of Wallet-API.
 
             Creates a transaction but does not relay it to the network. Custom configurations for sending transactions are available here.
 
-|  |  |  |  |  |
+| Argument | Mandatory | Default | Description | Data Type |
 | :--- | :--- | :--- | :--- | :--- |
-|  |  |  |  |  |
+| destination | Yes | - | List of dictionaries with address and amount \(in atomic units\) as keys.  | list |
+| mixin | No | The default mixin defined by the core software for the current height. | The mixin level to use.  | int |
+| fee | No | 0 | The fee in TRTL to use with this transaction. | int |
+| fee\_per\_byte | No | 0 | The amount in TRTL to pay for each byte of the resulting transaction size. | int |
+| payment\_id | No | - | The payment ID to use.  | str |
+| source\_addresses | No | Every address in the wallet container.  | List of the addresses to draw funds for the transaction from \(must be  addresses in this container\), | list |
+| unlock\_time | No | 0 | When to unlock the transaction. A user cannot spend locked funds until the unlock time has been reached. Can use either a block height, or a unix timestamp. | int |
+| extra | No | - | Hex representation of any extra data to be included in the `tx_extra` field of the transaction. | str |
 
             `Return Type` : _dict_
 
@@ -614,9 +621,12 @@ Integrates with the JSON-PRC interface of Wallet-API.
 
             Fusion transactions are zero fee, and seek to combine small inputs into larger ones, to allow for larger transactions. Many fusions may be required to fully optimize a wallet.
 
-|  |  |  |  |  |
-| :--- | :--- | :--- | :--- | :--- |
-|  |  |  |  |  |
+| Argument | Mandatory | Default | Description | Data Type |
+| :---: | :---: | :---: | :---: | :---: |
+| mixin | No | - | The mixin level to use | int |
+| destination | No | - | The destination address to send funds to. Must exist in this wallet. | str |
+| source\_addresses | No | - | The addresses to draw funds for the transaction from \(must be addresses in this container\) | list |
+| optimize\_target | No | - | If given, we will not fuse inputs larger than this value. Value given must be a valid input amount, i.e. only a single significant leading digit. For example, 20000 is fine, 23456 is not. | int |
 
             `Return Type` : _dict_
 
