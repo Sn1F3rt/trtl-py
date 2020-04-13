@@ -2,7 +2,7 @@
 
 ## Running TurtleCoind
 
-Start _TurtleCoind_ with the `--enable-blockexplorer` argument:
+Start _TurtleCoind_ with the `--enable-blockexplorer` cli argument:
 
 ```
 ./TurtleCoind --enable-blockexplorer
@@ -14,7 +14,7 @@ After starting it make sure the block-chain is synchronized. This might take a w
 Successfully synchronized with the TurtleCoin Network
 ```
 
-The python wrapper can now be used.
+You can now use the wrapper for TurtleCoind. 
 
 ## Usage
 

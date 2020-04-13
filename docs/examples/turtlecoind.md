@@ -12,7 +12,7 @@ daemon_port = 11898
 ssl = False
 
 #Inilialization
-turtlecoind = TurtleCoind(daemon_host, daemon_port, ssl)
+turtlecoind = TurtleCoind(host = daemon_host, port = daemon_port, ssl = ssl)
 
 #getblockcount
 response = turtlecoind.get_block_count()
