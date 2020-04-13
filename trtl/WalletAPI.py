@@ -7,15 +7,15 @@ class WalletAPI:
 
     Run wallet-api like:
 
-        ./wallet-api --rpc-password "my_password"
+        ./wallet-api --rpc-password my_password
     """
 
-    def __init__(self, key, rpc_host='127.0.0.1', rpc_port=8070, ssl=False):
+    def __init__(self, key, host='127.0.0.1', port=8070, ssl=False):
 
         if ssl:
-            self.url = f'https://{rpc_host}:{rpc_port}'
+            self.url = f'https://{host}:{port}'
         else:
-            self.url = f'http://{rpc_host}:{rpc_port}'
+            self.url = f'http://{host}:{port}'
 
         self.headers = {'X-API-KEY': f'{key}'}
 
@@ -60,10 +60,6 @@ class WalletAPI:
             response = requests.post(post_url, headers=self.headers)
 
         if response.status_code in [200, 201]:
-
-            if method == 'addresses/validate':
-                return True
-
             return response.json()
 
         elif response.status_code == 400:
@@ -619,12 +615,12 @@ class WalletAPI:
 
         return self._put_request('save')
 
-    def export(self, filepath):
+    def export(self, path):
         """
         Exports the wallet data to JSON into the filepath given
         """
 
-        return self._post_request(f'export/{filepath}')
+        return self._post_request(f'export/{path}')
 
     def reset(self, scan_height=None):
         """
@@ -639,10 +635,10 @@ class WalletAPI:
 
     def validate(self, address):
         """
-        Validate an address.
+        Validate an address
         """
 
-        params = {'address': f'{address}'}
+        params = {'address': address}
 
         return self._post_request('addresses/validate', params)
 
