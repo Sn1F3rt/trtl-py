@@ -85,7 +85,7 @@ public_spend_key = '5c703d9bde0b7cd5ff3e19ea826a44066534661a7322c85e854e73f06e49
 wallet_api.import_address_view(public_spend_key, 300000)
 
 #integrated_address
-payment_id = ''
+payment_id = '38a8224a4c8bc5f060555cf9e89551dcd0cbb1c587a52b63e98f71280c362ee4'
 addr = 'TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq'
 
 integrated_addr = wallet_api.integrated_address(payment_id, addr)
@@ -108,21 +108,110 @@ keys = wallet_api.wallet_keys()
 print(keys)
 
 #address_keys
-addr = ''
+addr = 'TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq'
 
 keys = wallet_api.address_keys(addr)
 print(keys)
 
 #mnemonic
-addr = ''
+addr = 'TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq'
 
 mnemonic_seed = wallet_api.mnemonic(addr)
 print(mnemonic_seed)
 
-- - - - - - - - 
+#transactions
+response = wallet_api.transactions()
 
+print(response) 
+ 
+#transaction_details
+hash = '396e2a782c9ce9993982c6f93e305b05306d0e5794f57157fbac78581443c55f'
 
+response = wallet_api.transaction_details(hash)
+print(response)
 
+#unconfirmed_transactions
+response = wallet_api.transaction_details()
+
+print(response)
+
+#unconfirmed_address
+addrs = 'TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq'
+
+response = wallet_api.unconfirmed_address(addr)
+print(response)
+
+#transactions_height
+start = 300000
+end = 1000000  #optional
+
+response = wallet_api.transactions_height(start, end)
+
+#transactions_height_address
+addr = 'TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq'
+start = 300000
+end = 1000000
+
+response = wallet_api.transactions_height_address(addr, start, end)
+print(response)
+
+#send_basic
+addr = 'TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq'
+amt = 1234
+pay_id = '38a8224a4c8bc5f060555cf9e89551dcd0cbb1c587a52b63e98f71280c362ee4'
+
+wallet_api.send_basic(addr, amt, pay_id)
+
+#prepare_basic
+amt = 1234
+
+wallet_api.prepare_basic(addr, amt, pay_id)
+
+#send_advanced
+dest = [
+    {
+      "address": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW",
+      "amount": 1234
+    },
+    {
+      "address": "TRTLv3r4N3Jbk7FApJXN3M66xWWr8FhbAiwGdEJC2wF1hTKGxnwUzhH8pFydrruvdtPSVTCMUKWGdSrAitgnEVFp8356HCkKHZG",
+      "amount": 5000
+    }
+  ]
+source_addr = ['TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq']
+change_addr = 'TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq'
+
+wallet_api.send_advanced(destination = dest, source_addresses = source_addr, change_address = change_addr)
+
+#prepare_advanced
+dest = [
+    {
+      "address": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW",
+      "amount": 1234
+    },
+    {
+      "address": "TRTLv3r4N3Jbk7FApJXN3M66xWWr8FhbAiwGdEJC2wF1hTKGxnwUzhH8pFydrruvdtPSVTCMUKWGdSrAitgnEVFp8356HCkKHZG",
+      "amount": 5000
+    }
+  ]
+source_addr = ['TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq']
+
+wallet_api.prepare_advanced(destination = dest, source_addresses = source_addr)
+
+#send_prepared
+hash = '396e2a782c9ce9993982c6f93e305b05306d0e5794f57157fbac78581443c55f'
+
+wallet_api.send_prepared(hash)
+
+#cancel_prepared
+hash = '396e2a782c9ce9993982c6f93e305b05306d0e5794f57157fbac78581443c55f'
+
+wallet_api.cancel_prepared(hash)
+
+#send_fusion_basic
+response = wallet_api.send_fusion_basic()
+
+#
 
 - - - - - - - -
 
@@ -132,7 +221,7 @@ response = wallet_api.balance()
 print(response)
 
 #address_balance
-addr = ''
+addr = 'TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq'
 
 response = wallet_api.address_balance(addr)
 print(response)
@@ -156,7 +245,7 @@ height = 300000
 wallet_api.reset(height)
 
 #validate
-addr = ''
+addr = 'TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq'
 
 response = wallet_api.validate(addr)
 print(response)
