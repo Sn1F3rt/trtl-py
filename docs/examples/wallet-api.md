@@ -89,5 +89,81 @@ payment_id = ''
 addr = 'TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq'
 
 integrated_addr = wallet_api.integrated_address(payment_id, addr)
+print(integrated_addr)
+
+#get_node
+node_details = wallet_api.get_node()
+
+print(node_details)
+
+#set_node
+daemon_host = 'localhost'
+daemon_port = 11898
+
+wallet_api.set_node(daemon_host, daemon_port)
+
+#wallet_keys
+keys = wallet_api.wallet_keys()
+
+print(keys)
+
+#address_keys
+addr = ''
+
+keys = wallet_api.address_keys(addr)
+print(keys)
+
+#mnemonic
+addr = ''
+
+mnemonic_seed = wallet_api.mnemonic(addr)
+print(mnemonic_seed)
+
+- - - - - - - - 
+
+
+
+
+- - - - - - - -
+
+#wallet_balance
+response = wallet_api.balance()
+
+print(response)
+
+#address_balance
+addr = ''
+
+response = wallet_api.address_balance(addr)
+print(response)
+
+#balances
+response = wallet_api.balances()
+
+print(response)
+
+#save
+wallet_api.save()
+
+#export
+file = 'wallet.json'
+
+wallet_api.export(file)
+
+#reset
+height = 300000
+
+wallet_api.reset(height)
+
+#validate
+addr = ''
+
+response = wallet_api.validate(addr)
+print(response)
+
+#status
+response = wallet_api.status()
+
+print(response)
 ```
 
