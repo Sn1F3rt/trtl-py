@@ -55,10 +55,39 @@ wallet_api.create_wallet(file, passwd)
 wallet_api.delete_wallet()
 
 #addresses
-
 addr = wallet-api.addresses()
+
 print(addr)
 
- 
+#delete_address
+addr = 'TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq'
+
+wallet_api.delete_address(addr)
+
+#primary address
+addr = wallet_api.primary_address()
+
+print(addr)
+
+#create_address    
+addr_details = wallet_api.create_address()
+
+print(addr_details)
+
+#import_address
+spend_key = '5c703d9bde0b7cd5ff3e19ea826a44066534661a7322c85e854e73f06e49cd06'
+
+wallet_api.import_address(spend_key, 300000)
+
+#import_address_view
+public_spend_key = '5c703d9bde0b7cd5ff3e19ea826a44066534661a7322c85e854e73f06e49cd06'
+
+wallet_api.import_address_view(public_spend_key, 300000)
+
+#integrated_address
+payment_id = ''
+addr = 'TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq'
+
+integrated_addr = wallet_api.integrated_address(payment_id, addr)
 ```
 
