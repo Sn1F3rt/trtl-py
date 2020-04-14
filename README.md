@@ -1,6 +1,6 @@
 # Home
 
-[![Build Status](https://travis-ci.org/sohamb03/trtl-py.svg?branch=master)](https://travis-ci.org/sohamb03/trtl-py) ![Discord](https://img.shields.io/discord/388915017187328002?label=Discord)
+[![Build Status](https://travis-ci.org/sohamb03/trtl-py.svg?branch=master)](https://travis-ci.org/sohamb03/trtl-py) ![Python](https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blue) ![Discord](https://img.shields.io/discord/388915017187328002)
  
 *trtl-py is a Python Wrapper for the JSON-RPC API of TurtleCoin, which integrates with TurtleCoind and WalletAPI.*
 
