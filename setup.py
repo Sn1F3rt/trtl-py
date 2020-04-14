@@ -1,16 +1,22 @@
-from distutils.core import setup
+from setuptools import setup
+from os import path
+
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
 
 setup(
   name = 'trtl',         
   packages = ['trtl'],
   version = '0.1',      
-  license='MIT',        
-  description = 'The Python RPC Wrapper for TurtleCoind and WalletAPI.',   
+  license='MIT',
+  description = 'The Python RPC Wrapper for TurtleCoind and WalletAPI.',
+  long_description=long_description,
+  long_description_content_type='text/markdown',   
   author = 'Sayan Bhattacharyya',                
   author_email = 'sohamb03@outlook.com',    
   url = 'https://github.com/sohamb03/trtl-py', 
-  download_url = 'https://github.com/sohamb03/trtl-py/archive/v_01.tar.gz',    
-  keywords = ['turtlecoin', 'turtlecoind', 'wallet-api', 'py-wrapper'],   
+  download_url = 'https://github.com/sohamb03/trtl-py/archive/v_01.tar.gz',
   python_requires=">=3.6",
   install_requires=[           
           'requests'
