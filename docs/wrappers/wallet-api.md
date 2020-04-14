@@ -152,6 +152,8 @@ Integrates with the JSON-PRC interface of Wallet-API.
             `Return Type` : _dict_
 
 ```python
+#Expected Output
+
 {
   "address": "TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq"
 }
@@ -166,6 +168,8 @@ Integrates with the JSON-PRC interface of Wallet-API.
             `Return Type` : _dict_
 
 ```python
+#Expected Output
+
 {
   "address": "TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq",
   "privateSpendKey": "6d4a7c160cbd4c9de33eeb161ff30539d2e28b447eb5af73523cc3379c591c83",
@@ -185,6 +189,8 @@ Integrates with the JSON-PRC interface of Wallet-API.
             `Return Type` : _dict_
 
 ```python
+#Expected Output
+
 {
   "address": "TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq"
 }
@@ -202,6 +208,8 @@ Integrates with the JSON-PRC interface of Wallet-API.
             `Return Type` : _dict_
 
 ```python
+#Expected Output
+
 {
   "address": "TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq"
 }
@@ -219,12 +227,14 @@ Integrates with the JSON-PRC interface of Wallet-API.
             `Return Type` : _dict_
 
 ```python
+#Expected Output
+
 {
   "integratedAddress": "TRTLuxiNXhy96RNDkv2jx29jL7GdTWYBmA4r7K8KRpDWA4hJJnTZEgFHFzxqvmBLtz94oF4uPokQdHbV9j2g7S6LA4hKPvjZEFS2CiAj6DL8isYELmTec8Z9BK56oL1KMhjMRSMyfwYaogKg17hQKC23CHPBcHqrHHGzdRYUk3HGqkMwXbHg3BoCpXD"
 }
 ```
 
-      14. **`get_node(private_spend_key, scan_height = None)`**
+      14. **`get_node()`**
 
             _Gets the node address, port, fee, and fee address._
 
@@ -233,6 +243,8 @@ Integrates with the JSON-PRC interface of Wallet-API.
             `Return Type` : _dict_
 
 ```python
+#Expected Output
+
 {
   "daemonHost": "127.0.0.1",
   "daemonPort": 11898,
@@ -261,6 +273,8 @@ Integrates with the JSON-PRC interface of Wallet-API.
             `Return Type` : _dict_
 
 ```python
+#Expected Output
+
 {
   "privateViewKey": "85baeb8ae23bf266c68a5845f1ff13af7ff221f46e4dfc1293eec9a3e211a90a"
 }
@@ -277,6 +291,8 @@ Integrates with the JSON-PRC interface of Wallet-API.
             `Return Type` : _dict_
 
 ```python
+#Expected Output
+
 {
   "privateSpendKey": "85baeb8ae23bf266c68a5845f1ff13af7ff221f46e4dfc1293eec9a3e211a90a",
   "publicSpendKey": "85baeb8ae23bf266c68a5845f1ff13af7ff221f46e4dfc1293eec9a3e211a90a"
@@ -310,6 +326,8 @@ Integrates with the JSON-PRC interface of Wallet-API.
             `Return Type` : _dict_
 
 ```python
+#Expected Output
+
 {
   "transactions": [
     {
@@ -340,6 +358,8 @@ Integrates with the JSON-PRC interface of Wallet-API.
             `Return Type` : _dict_
 
 ```python
+#Expected Output
+
 {
   "transactions": {
     "blockHeight": 800000,
@@ -366,6 +386,8 @@ Integrates with the JSON-PRC interface of Wallet-API.
           `Return Type` : _dict_
 
 ```python
+#Expected Output
+
 {
   "transactions": [
     {
@@ -396,6 +418,8 @@ Integrates with the JSON-PRC interface of Wallet-API.
             `Return Type` : _dict_
 
 ```python
+#Expected Output
+
 {
   "transactions": [
     {
@@ -504,7 +528,7 @@ Integrates with the JSON-PRC interface of Wallet-API.
 }
 ```
 
-      26. **`prepare_basic(amount, address = None, payment_is = None)`**
+      26. **`prepare_basic(amount, address = None, payment_id = None)`**
 
             _Creates a transaction but does not relay it to the network. This method will take funds from all sub-wallets as needed, and will use the primary address as the change address. It also uses a default fee, and default mixin. **If this is not acceptable, please use the prepare\_advanced method instead**. Allows you to review the created transactions fee before deciding whether to commit to paying that fee. **Prepared transactions can be sent using send\_prepared method, or cancelled with cancel\_prepared method**._ 
 
@@ -545,6 +569,8 @@ Integrates with the JSON-PRC interface of Wallet-API.
             `Return Type` : _dict_
 
 ```python
+#Expected Output
+
 {
   "transactionHash": "396e2a782c9ce9993982c6f93e305b05306d0e5794f57157fbac78581443c55f",
   "fee": 1000,
@@ -570,6 +596,8 @@ Integrates with the JSON-PRC interface of Wallet-API.
             `Return Type` : _dict_
 
 ```python
+#Expected Output
+
 {
   "transactionHash": "396e2a782c9ce9993982c6f93e305b05306d0e5794f57157fbac78581443c55f",
   "fee": 1000,
@@ -588,6 +616,8 @@ Integrates with the JSON-PRC interface of Wallet-API.
             `Return Type` : _dict_
 
 ```python
+#Expected Output
+
 {
   "transactionHash": "1982d8903c5e2b0914e6586e5b715758823e4903c2bacda7aa519ff6feb1476e"
 }
@@ -612,6 +642,8 @@ Integrates with the JSON-PRC interface of Wallet-API.
             `Return Type`: _dict_
 
 ```python
+#Expected Output
+
 {
   "transactionHash": "396e2a782c9ce9993982c6f93e305b05306d0e5794f57157fbac78581443c55f"
 }
@@ -631,6 +663,8 @@ Integrates with the JSON-PRC interface of Wallet-API.
             `Return Type` : _dict_
 
 ```python
+#Expected Output
+
 {
   "transactionHash": "396e2a782c9ce9993982c6f93e305b05306d0e5794f57157fbac78581443c55f"
 }

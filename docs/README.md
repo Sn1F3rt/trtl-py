@@ -19,7 +19,7 @@ The source code for this project is available at [https://github.com/sohamb03/tr
 ## Requirements
 
 * Python &gt;= 3.6 
-* TurtleCoin version 0.22.0
+* TurtleCoin version 0.24.0
 
 ## Donate
 
