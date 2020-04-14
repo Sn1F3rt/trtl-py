@@ -224,7 +224,7 @@ response = wallet_api.send_fusion_advnaced(optimize_target = opt)
 print(response)
 
 #transactions_private_key
-hash = ''
+hash = '396e2a782c9ce9993982c6f93e305b05306d0e5794f57157fbac78581443c55f'
 
 response = wallet_api.transactions_private_key(hash)
 print(response)
