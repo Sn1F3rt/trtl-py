@@ -1,7 +1,8 @@
 from distutils.core import setup
+
 setup(
-  name = 'trtl-py',         
-  packages = ['trtl-py'],
+  name = 'trtl',         
+  packages = ['trtl'],
   version = '0.1',      
   license='MIT',        
   description = 'The Python RPC Wrapper for TurtleCoind and WalletAPI.',   
