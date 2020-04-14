@@ -160,12 +160,14 @@ addr = 'TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SU
 amt = 1234
 pay_id = '38a8224a4c8bc5f060555cf9e89551dcd0cbb1c587a52b63e98f71280c362ee4'
 
-wallet_api.send_basic(addr, amt, pay_id)
+response = wallet_api.send_basic(addr, amt, pay_id)
+print(response)
 
 #prepare_basic
 amt = 1234
 
-wallet_api.prepare_basic(addr, amt, pay_id)
+response = wallet_api.prepare_basic(addr, amt, pay_id)
+print(response)
 
 #send_advanced
 dest = [
@@ -181,7 +183,8 @@ dest = [
 source_addr = ['TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq']
 change_addr = 'TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq'
 
-wallet_api.send_advanced(destination = dest, source_addresses = source_addr, change_address = change_addr)
+response = wallet_api.send_advanced(destination = dest, source_addresses = source_addr, change_address = change_addr)
+print(response)
 
 #prepare_advanced
 dest = [
@@ -196,12 +199,14 @@ dest = [
   ]
 source_addr = ['TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq']
 
-wallet_api.prepare_advanced(destination = dest, source_addresses = source_addr)
+response = wallet_api.prepare_advanced(destination = dest, source_addresses = source_addr)
+print(response)
 
 #send_prepared
 hash = '396e2a782c9ce9993982c6f93e305b05306d0e5794f57157fbac78581443c55f'
 
-wallet_api.send_prepared(hash)
+response = wallet_api.send_prepared(hash)
+print(response)
 
 #cancel_prepared
 hash = '396e2a782c9ce9993982c6f93e305b05306d0e5794f57157fbac78581443c55f'
@@ -210,10 +215,19 @@ wallet_api.cancel_prepared(hash)
 
 #send_fusion_basic
 response = wallet_api.send_fusion_basic()
+print(response)
 
-#
+#send_fusion_advanced
+opt = 20000
 
-- - - - - - - -
+response = wallet_api.send_fusion_advnaced(optimize_target = opt)
+print(response)
+
+#transactions_private_key
+hash = ''
+
+response = wallet_api.transactions_private_key(hash)
+print(response)
 
 #wallet_balance
 response = wallet_api.balance()
