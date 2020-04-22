@@ -35,7 +35,7 @@ Integrates with the JSON-PRC interface of Wallet-API.
 
 **If the operation was successful, `200` is returned else a `ValueError` is raised, with the relevant error message.**
 
-      2. **`import_wallet_key(filename, password, private_view_key, private_spend_key, daemon_host = None, daemon_port = None, scan_height = None)`**
+      2. **`import_wallet_key(filename, password, private_view_key, private_spend_key, daemon_host = 'localhost', daemon_port = 11898, scan_height = None)`**
 
            _Imports a wallet with a private view and spend key._
 
@@ -72,7 +72,7 @@ Integrates with the JSON-PRC interface of Wallet-API.
 
       4. **`import_wallet_view(filename, password, private_view_key, address, daemon_host = 127.0.0.1, daemon_port = 11898, scan_height = None)`**
 
-            I_mports a view only wallet with a private view key and public address._
+            _Imports a view only wallet with a private view key and public address._
 
 | Argument | Mandatory | Default | Description | Data Type |
 | :---: | :---: | :---: | :---: | :---: |
