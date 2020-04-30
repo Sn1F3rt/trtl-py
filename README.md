@@ -1,4 +1,4 @@
-<h1 style="text-align:center">Home<h1>
+<p style="text-align:center"><h1>Home</h1></p>
 
 <p>&nbsp;</p>
 <p align="center"><a href="https://travis-ci.org/github/sohamb03/trtl-py" rel="nofollow"><img src="https://travis-ci.org/sohamb03/trtl-py.svg?branch=master" alt="Build" style="max-width:100%;"></a>
