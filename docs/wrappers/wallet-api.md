@@ -15,7 +15,7 @@ You can now use the wrapper for Wallet-API.
 ## Usage
 
 ```python
-class WalletAPI(key, host = '127.0.0.1', port = 8070, ssl = False)
+class WalletAPI(key, host = '127.0.0.1', port = 8070, ssl = False, timeout=5)
 ```
 
 Integrates with the JSON-PRC interface of Wallet-API.

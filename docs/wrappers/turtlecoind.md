@@ -19,7 +19,7 @@ You can now use the wrapper for TurtleCoind.
 ## Usage
 
 ```python
-class TurtleCoind(host = '127.0.0.1', port = 11898, ssl = False)
+class TurtleCoind(host = '127.0.0.1', port = 11898, ssl = False, timeout=5)
 ```
 
 Integrates with the JSON-RPC interface of TurtleCoind.
