@@ -7,18 +7,21 @@ class TurtleCoind:
     Integrates with JSON-RPC interface of `TurtleCoind`
     """
 
-    def __init__(self, host='127.0.0.1', port=11898, ssl=False):
+    def __init__(self, host='127.0.0.1', port=11898, ssl=False, timeout=5):
+
         if ssl:
             self.url = f'https://{host}:{port}'
         else:
             self.url = f'http://{host}:{port}'
+
+        self.timeout = timeout
 
         self.headers = {'content-type': 'application/json'}
 
     def _get_request(self, method):
         get_url = self.url + '/' + method
 
-        response = requests.get(get_url)
+        response = requests.get(get_url, timeout=(self.timeout,))
 
         return response.json()
 
@@ -33,7 +36,8 @@ class TurtleCoind:
 
         response = requests.post(post_url,
                                  data=json.dumps(payload),
-                                 headers=self.headers).json()
+                                 headers=self.headers,
+                                 timeout=(self.timeout,)).json()
 
         if 'error' in response:
             raise ValueError(response['error'])
