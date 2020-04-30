@@ -91,7 +91,7 @@ Integrates with the JSON-RPC interface of TurtleCoind.
 
       4. **`submit_block(block_blob)`** 
 
-            Submits mined block.
+            _Submits mined block._
 
 | Argument | Mandatory | Description | Data Type |
 | :---: | :---: | :---: | :---: |

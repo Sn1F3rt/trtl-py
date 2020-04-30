@@ -6,7 +6,10 @@
 
 * [TurtleCoind](wrappers/turtlecoind.md)
 * [Wallet-API](wrappers/wallet-api.md)
-* [Utils](utils.md)
+
+## Utility
+
+* [Utils](utility/utils.md)
 
 ## Examples
 
