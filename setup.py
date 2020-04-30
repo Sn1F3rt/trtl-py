@@ -8,7 +8,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 setup(
   name = 'trtl',         
   packages = ['trtl'],
-  version = '0.0.1',      
+  version = '0.0.2',      
   license='MIT',
   description = 'The Python RPC Wrapper for TurtleCoind and WalletAPI.',
   long_description=long_description,
@@ -16,13 +16,13 @@ setup(
   author = 'Sayan Bhattacharyya',                
   author_email = 'sohamb03@outlook.com',    
   url = 'https://github.com/sohamb03/trtl-py', 
-  download_url = 'https://github.com/sohamb03/trtl-py/archive/v_001.tar.gz',
+  download_url = 'https://github.com/sohamb03/trtl-py/archive/v_002.tar.gz',
   python_requires=">=3.6",
   install_requires=[           
           'requests'
       ],
   classifiers=[
-    'Development Status :: 3 - Alpha',      
+    'Development Status :: 4 - Beta',      
     'Intended Audience :: Developers',      
     'Topic :: Software Development :: Build Tools',
     'License :: OSI Approved :: MIT License',   
