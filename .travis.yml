@@ -11,3 +11,4 @@ install:
 script:
   - python trtl/TurtleCoind.py
   - python trtl/WalletAPI.py
+  - python trtl/Utils.py
